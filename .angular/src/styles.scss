@@ -1,0 +1,144 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+@import './stylesVariables/colors.scss';
+$md-nonna: (
+    50 : #eaf3ed,
+    100 : #cbe2d2,
+    200 : #a9ceb5,
+    300 : #86ba97,
+    400 : #6cac80,
+    500 : #529d6a,
+    600 : #4b9562,
+    700 : #418b57,
+    800 : #38814d,
+    900 : #286f3c,
+    A100 : #b4ffc7,
+    A200 : #81ffa2,
+    A400 : #4eff7c,
+    A700 : #35ff69,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$md-nonna-secondary: (
+  50: #fff4e0,
+  100: #ffe3b3,
+  200: #ffd080,
+  300: #ffbd4d,
+  400: #ffae26,
+  500: #ffa000,
+  600: #ff9800,
+  700: #ff8e00,
+  800: #ff8400,
+  900: #ff7300,
+  A100: #ffffff,
+  A200: #fff7f2,
+  A400: #ffd8bf,
+  A700: #ffc9a6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$NonnaNFT-primary: mat.define-palette($md-nonna);
+$NonnaNFT-accent: mat.define-palette($md-nonna-secondary);
+
+// The warn palette is optional (defaults to red).
+$NonnaNFT-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$NonnaNFT-theme: mat.define-light-theme((
+  color: (
+    primary: $NonnaNFT-primary,
+    accent: $NonnaNFT-accent,
+    warn: $NonnaNFT-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($NonnaNFT-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+  margin: 0;
+  font-family: "Merienda One", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  width: 100vw;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-image: url('/assets/images/green_bg.png');
+  color: white;
+}
+.mat-raised-button.mat-accent{
+  color: white;
+}
+* {
+  font-family: "Merienda One", "Helvetica Neue", sans-serif;
+}
+
+
+.reveal {
+  position: relative;
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

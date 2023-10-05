@@ -1,0 +1,59 @@
+@import '/src/stylesVariables/colors.scss';
+
+.circlesContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    margin: 40px 0;
+    align-items: center;
+    .circle {
+        animation: 2s ease 0s normal forwards 1 slide-up;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+        background: #C8ECEF;
+        text-align: center;
+        border-radius: 50%;
+        aspect-ratio: 1 / 1; 
+        color: $brickColor;
+        display: grid;
+        place-content: center;
+        div {
+            margin: auto;
+            padding: 2vw;
+        }
+
+        .smallText{
+            font-size: clamp(16px, 3vw, 24px);
+            font-style: normal;
+            font-weight: 700;
+        }
+        .bigText{
+            font-size: clamp(23px, 5vw, 50px);
+            font-style: normal;
+            font-weight: 700;
+            margin-bottom: 15%;
+        }
+
+        &.two{
+            animation-delay: 1s;
+        }
+        &.three{
+            animation-delay: 2s;
+        }
+    }
+}
+:host {
+    grid-column: 1 / 3;
+}
+
+@media only screen and (max-width: 1024px) {
+    :host {
+        grid-column: 1 / 2;
+    }
+}
+
+@keyframes slide-up {
+    0% { transform: translatey(100%); opacity: 0;};
+    100% { transform: translatey(0%);opacity: 1;};
+}

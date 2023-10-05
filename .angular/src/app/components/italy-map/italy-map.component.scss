@@ -1,0 +1,58 @@
+@import '../../../stylesVariables/colors.scss' ;
+
+:host{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media only screen and (max-width: 1024px) {
+    :host{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .hide{
+        display: none;
+    }
+}
+
+svg{
+    fill: white;
+    stroke: $primary;
+    stroke-width: 2px;
+    z-index: 100;
+}
+.region:hover{
+    fill: $primary;
+}
+
+.o-selectedRegion{
+    position: relative;
+    background-image: url('./~/assets/images/blue-towel.jpg');
+    padding: 15px;
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    grid-template-rows: repeat(4,min-content);
+    gap: 10px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+    .close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-weight: bold;
+
+    }
+    &.show{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scrollLeft {
+	0% { margin-left: -100px; opacity: 0;}
+	100% { margin-left: 0; opacity: 1; visibility: visible;}
+}

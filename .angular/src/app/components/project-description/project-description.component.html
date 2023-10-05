@@ -1,0 +1,121 @@
+<div class="o-projectDescription">
+    <div class="m-projectDescription_firstSection reveal fade-bottom">
+        <div class="a-projectDescription_title">
+            The first <span class="__highlighted">NFT</span>
+            <div>dedicated to</div> 
+            <div>Nonna’s recipes</div>
+            <div>
+                <button class="__openSeaButton __desktopButton" mat-raised-button color="accent">BUY ON OPENSEA</button>
+            </div>
+        </div>
+        <app-grid-carousel></app-grid-carousel>
+
+        <button class="__openSeaButton __mobileButton" mat-raised-button color="accent">BUY ON OPENSEA</button>
+
+        <div *ngIf="false" >
+            <div class="slider">
+                <div class="slide-track-left">
+                    <div *ngFor="let number of [1,2,3,4,5,6,7]" class="slide">
+                        <img src="/assets/images/slideImages/NFT_SLIDE{{number}}.jpeg" width="250px" height="250px" alt="load"/>
+                    </div>
+                    <div *ngFor="let number of [1,2,3,4,5,6,7]" class="slide">
+                        <img src="/assets/images/slideImages/NFT_SLIDE{{number}}.jpeg" width="250px" height="250px" alt="load"/>
+                    </div>
+                </div>
+
+                <div class="slide-track-right">
+                    <div *ngFor="let number of [8,9,10,11,12,13,14]" class="slide">
+                        <img src="/assets/images/slideImages/NFT_SLIDE{{number}}.jpeg" width="250px" height="250px" alt="load"/>
+                    </div>
+                    <div *ngFor="let number of [8,9,10,11,12,13,14]" class="slide">
+                        <img src="/assets/images/slideImages/NFT_SLIDE{{number}}.jpeg" width="250px" height="250px" alt="load"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <app-circle-container></app-circle-container>
+    </div>
+
+    <br>
+    <section>
+        <div class="m-projectDescription_secondSection reveal fade-bottom">
+            <div class="a_projectDescription_intro">Every region of Italy has a distinctive dish, stranding for tradition of that specific place.</div>
+            <app-italy-map></app-italy-map>
+        </div>
+    </section>
+    <section>
+        <div class="m-projectDescription_thirdSection reveal fade-bottom">
+            <div class="a-projectDescription_phase">
+                <div>{{'ROADMAP_PHASE' | translate}}</div>
+                <div>{{'ROADMAP_ONE' | translate}}</div>
+            </div>
+            <div class="a-projectDescription_splitter"></div>
+            <div class="a-projectDescription_background">
+                <img class="m-header_logo" src="/assets/images/Phase1.png" alt="not_found"/>
+            </div>
+
+            <div class="a-projectDescription_background">
+                <img class="m-header_logo" src="/assets/images/Phase2.png" alt="not_found"/>
+            </div>
+            <div class="a-projectDescription_splitter"></div>
+            <div class="a-projectDescription_phase">
+                <div>{{'ROADMAP_PHASE' | translate}}</div>
+                <div>{{'ROADMAP_TWO' | translate}}</div>
+            </div>
+
+            <div class="a-projectDescription_phase">
+                <div>{{'ROADMAP_PHASE' | translate}}</div>
+                <div>{{'ROADMAP_THREE' | translate}}</div>
+            </div>
+            <div class="a-projectDescription_splitter"></div>
+            <div class="a-projectDescription_background">
+                <img class="m-header_logo" src="/assets/images/Phase3.png" alt="not_found"/>
+            </div>
+
+            <div class="a-projectDescription_background">
+                <img class="m-header_logo" src="/assets/images/Phase4.png" alt="not_found"/>
+            </div>
+            <div class="a-projectDescription_splitter"></div>
+            <div class="a-projectDescription_phase">
+                <div>{{'ROADMAP_PHASE' | translate}}</div>
+                <div>{{'ROADMAP_FOUR' | translate}}</div>
+            </div>
+        </div>
+
+
+        <div class="m-projectDescription_thirdSection __mobile reveal fade-bottom">
+            <div class="a-projectDescription_phase">
+                <div class="circle"><span>1</span></div>
+                <div>{{'ROADMAP_ONE' | translate}}</div>
+            </div>
+            <div class="a-projectDescription_background">
+                <img class="m-header_logo" src="/assets/images/Phase1.png" alt="not_found"/>
+            </div>
+
+            <div class="a-projectDescription_phase">
+                <div class="circle"><span>2</span></div>
+                <div>{{'ROADMAP_TWO' | translate}}</div>
+            </div>
+
+            <div class="a-projectDescription_background">
+                <img class="m-header_logo" src="/assets/images/Phase2.png" alt="not_found"/>
+            </div>
+
+            <div class="a-projectDescription_phase">
+                <div class="circle"><span>3</span></div>
+                <div>{{'ROADMAP_THREE' | translate}}</div>
+            </div>
+            <div class="a-projectDescription_background">
+                <img class="m-header_logo" src="/assets/images/Phase3.png" alt="not_found"/>
+            </div>
+            <div class="a-projectDescription_phase">
+                <div class="circle"><span>4</span></div>
+                <div>{{'ROADMAP_FOUR' | translate}}</div>
+            </div>
+            <div class="a-projectDescription_background">
+                <img class="m-header_logo" src="/assets/images/Phase4.png" alt="not_found"/>
+            </div>
+        </div>
+    </section>
+</div>

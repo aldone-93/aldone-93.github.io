@@ -1,0 +1,189 @@
+@import '/src//stylesVariables/colors.scss';
+
+.o-projectDescription{
+    padding: 0 2%;
+}
+
+.m-projectDescription_firstSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .__mobileButton {
+        display: none;
+    }
+
+}
+  
+.a-projectDescription_title{
+    font-weight: 700;
+    z-index: 100;
+    color: $brickColor;
+    font-size: clamp(30px, 9vw, 70px);
+    line-height: normal;
+    text-shadow: white 3px 3px 3px;
+    animation: normal slide-in-text 1s;
+}
+.m-projectDescription_secondSection{
+    background: $lightBackground;
+    color: $primary;
+    display: grid;
+    grid-template-rows: auto auto;
+    padding: 5%;
+    gap:50px;
+    align-items: center;
+    border-radius: 60px;
+    box-shadow: 3px 6px 10px lightgray;
+}
+
+.m-header_logo{
+    width: 100%;
+    height: auto;
+}
+
+.m-projectDescription_thirdSection{
+    background: $lightBackground;
+    display: grid;
+    color: $darkFont;
+    grid-template-columns: 1fr min-content 1fr;
+    justify-items: center;
+    padding: 70px;
+    gap:50px;
+    border-radius: 60px;
+    box-shadow: 3px 6px 10px lightgray;
+    align-items: center;
+    margin-top: 30px;
+    .a-projectDescription_splitter{
+        height: 100%;
+        border-left: 3px dashed red;
+    }
+    &.__mobile{
+        display: none;
+    }
+
+    .circle{
+        text-align: center;
+            span {
+                border: 1px solid $primary;
+                background: $primary;
+                border-radius: 50%;
+                padding: 0 5px;
+                color: white;
+            }
+    }
+}
+
+.a_projectDescription_intro {
+    font-weight: 700;
+    font-size: clamp(16px, 2vw, 40px );
+    line-height: normal;
+    text-align: center;
+}
+.a_projectDescription_title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    color: $brickColor;
+}
+.a-projectDescription_summary {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 33px;
+    color: black;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 20px;
+}
+.__openSeaButton{
+    padding: 14px 60px;
+    gap: 10px;
+    border-radius: 50px;
+}
+.__highlighted{
+    transform: translateX(100%);
+    opacity: 0;
+    position: absolute;
+    margin: 0 23px;
+    color: $secondary;
+    animation: popup 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+$animationSpeed: 30s;
+
+// Animation
+@keyframes scrolLeft {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-290px * 7))}
+}
+
+@keyframes scrollRight {
+    100% { transform: translateX(0);}
+	0% { transform: translateX(calc(-290px * 7))}
+}
+
+// Styling
+.slider {
+	
+	height: 100%;
+	overflow:hidden;
+	width: 960px;
+	.slide-track-left {
+		animation: scrolLeft $animationSpeed linear infinite;
+		display: flex;
+		width: calc(290px * 14);
+    }
+    .slide-track-right {
+		animation: scrollRight $animationSpeed linear infinite;
+		display: flex;
+		width: calc(290px * 14);
+    }
+    .slide{
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .m-projectDescription_firstSection{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr minmax(0,1fr) auto;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        grid-template-rows: repeat(4, auto);
+        gap: 16px;
+    }
+    .__desktopButton{
+        display: none;
+    }
+    .__mobileButton {
+        display: block;
+    }
+
+    .m-projectDescription_thirdSection{
+        grid-template-columns: auto;
+        display: none;
+        .a-projectDescription_phase{
+            display: grid;
+            gap: 16px;
+        }
+        &.__mobile{
+            display: grid;
+            gap: 16px;
+        }
+    }
+
+
+  }
+
+
+@keyframes slide-in-text {
+    0% { transform: translateX(-100%)};
+    100% { transform: translateX(0%)};
+}
+
+@keyframes popup {
+    0% { transform: translateX(100%)};
+    100% { transform: translateX(0%); opacity: 1;};
+}

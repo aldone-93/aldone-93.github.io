@@ -1,0 +1,30 @@
+@import '/src/stylesVariables/colors.scss';
+.o-header{
+    display: grid;
+    padding: 20px;
+    grid-template-columns: auto max-content;
+    align-items: center;
+    color: $brickColor;
+}
+
+.m-header_logo{
+    height: 100px;
+}
+
+.m-header_links{
+    display: inline-flex;
+    gap: 20px;
+}
+@media only screen and (max-width: 600px) {
+    .m-header_links{
+        display: none;
+    }
+  }
+
+.m-header_social{
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    justify-self: end;
+
+}
