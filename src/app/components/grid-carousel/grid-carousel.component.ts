@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as d3 from 'd3';
 
-var width = 700
 var height = 400
 @Component({
   selector: 'app-grid-carousel',
@@ -11,6 +10,8 @@ var height = 400
 export class GridCarouselComponent {
  
   @ViewChild('chart') chartRoot!: ElementRef<SVGSVGElement>;
+
+  width = window.innerWidth / 2;
 
   
   private container?: d3.Selection<SVGElement, unknown, any, any>; 
@@ -27,6 +28,7 @@ export class GridCarouselComponent {
  
   ngAfterViewInit( ) { 
     const svg = d3.select<SVGElement, unknown>(this.chartRoot.nativeElement); 
+    const width = svg.node()?.getBoundingClientRect()?.width || 0;
     this.container = svg.append<SVGElement>('g').attr("transform", `translate(${width/2},${height/2})`); 
 
     const nodes: any = this.container.selectAll('circle') 
