@@ -1,0 +1,84 @@
+:host{
+    background: #EEF9FA;
+    display: grid;
+    grid-template-rows: auto auto;
+    padding: 5%;
+    grid-gap: 50px;
+    gap: 50px;
+    align-items: center;
+    text-align: center;
+    color: #30242A;
+    border-radius: 60px;
+    box-shadow: 3px 6px 10px lightgray;
+}
+
+.title{
+    color: #883027;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.subtitle{
+    color: #30242A;
+    text-align: justify;
+    font-size: 23px;
+}
+
+.descriptionBox{
+    font-size: 18px;
+    width: 275px;
+    height: 400px;
+    line-height: 33.073px;
+    box-sizing: border-box;
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    &.green{
+        border-radius: 5px;
+        background: rgba(216, 239, 200, 0.75);
+        box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        align-self: self-start;
+    }
+
+    &.lightPink{
+        border-radius: 5px;
+        background: rgba(246, 237, 237, 0.50);
+        box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        align-self: center;
+    }
+
+    &.pink{
+        border-radius: 5px;
+        background: rgba(255, 153, 169, 0.50);
+        box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        align-self: flex-end;
+    }
+}
+
+.stairDivs{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    gap: 45px;
+    height: 700px;
+    .vespa{
+        position: absolute;
+        top: -39px;
+        left: 500px;
+        animation: rotate 2s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes rotate{
+    0%{
+        left: 500px;
+        transform: rotate(0);
+    }
+    100%{
+        left: 700px;
+        transform: rotate(-20deg);
+    }
+}

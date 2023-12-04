@@ -1,12 +1,15 @@
 @import '/src//stylesVariables/colors.scss';
 
 .o-projectDescription{
-    padding: 0 2%;
 }
 
 .m-projectDescription_firstSection{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-image: url('/assets/images/green_bg.png');
+    border-radius: 60px;
+    padding: 2%;
+
     .__mobileButton {
         display: none;
     }
@@ -39,37 +42,6 @@
     height: auto;
 }
 
-.m-projectDescription_thirdSection{
-    background: $lightBackground;
-    display: grid;
-    color: $darkFont;
-    grid-template-columns: 1fr min-content 1fr;
-    justify-items: center;
-    padding: 70px;
-    gap:50px;
-    border-radius: 60px;
-    box-shadow: 3px 6px 10px lightgray;
-    align-items: center;
-    margin-top: 30px;
-    .a-projectDescription_splitter{
-        height: 100%;
-        border-left: 3px dashed red;
-    }
-    &.__mobile{
-        display: none;
-    }
-
-    .circle{
-        text-align: center;
-            span {
-                border: 1px solid $primary;
-                background: $primary;
-                border-radius: 50%;
-                padding: 0 5px;
-                color: white;
-            }
-    }
-}
 
 .a_projectDescription_intro {
     font-weight: 700;

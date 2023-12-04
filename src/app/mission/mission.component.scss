@@ -1,0 +1,54 @@
+:host {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-image: url(/assets/images/green_bg.png);
+    border-radius: 60px;
+    padding: 0 2%;
+    gap: 25px;
+}
+
+.title {
+    color: #883027;
+    padding: 40px 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 45.573px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    color: #30242A;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 33.073px;
+
+}
+
+.hand{
+    justify-self: flex-end;
+    align-self: end;
+    line-height: 0;
+    padding: 0 100px;
+}
+
+.doublePlate{
+    height: 400px;
+    position: relative;
+
+    img{
+        position: absolute;
+
+        &.primo{
+            top: 100px;
+            left: 50px;
+        }
+
+        &.secondo{
+            left: 215px;
+            top: 50px;
+        }
+    }
+}

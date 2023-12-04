@@ -13,6 +13,9 @@ import { ItalyMapComponent } from './components/italy-map/italy-map.component';
 import { GridCarouselComponent } from './components/grid-carousel/grid-carousel.component';
 import { CircleContainerComponent } from './components/project-description/circle-container/circle-container.component';
 import 'd3';
+import { AboutSectionComponent } from './about-section/about-section.component';
+import { MissionComponent } from './mission/mission.component';
+import { RoadmapComponent } from './roadmap/roadmap.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -25,7 +28,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     GridCarouselComponent,
     HeaderComponent,
     ProjectDescriptionComponent,
-    CircleContainerComponent
+    CircleContainerComponent,
+    AboutSectionComponent,
+    MissionComponent,
+    RoadmapComponent
   ],
   imports: [
     BrowserModule,

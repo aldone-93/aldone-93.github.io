@@ -109,7 +109,7 @@ body {
   height: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  background-image: url('/assets/images/green_bg.png');
+  background-color: $lightBackground;
   color: white;
 }
 .mat-raised-button.mat-accent{
