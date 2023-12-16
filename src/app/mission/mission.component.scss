@@ -31,7 +31,7 @@ article {
     justify-self: flex-end;
     align-self: end;
     line-height: 0;
-    padding: 0 100px;
+    padding: 0;
 }
 
 .doublePlate{
@@ -44,11 +44,26 @@ article {
         &.primo{
             top: 100px;
             left: 50px;
+
         }
 
         &.secondo{
             left: 215px;
             top: 50px;
         }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .hand{
+        justify-self: flex-end;
+        align-self: end;
+        line-height: 0;
+    }
+    
+    .doublePlate{
+        position: relative;
+        display: nones;
     }
 }
