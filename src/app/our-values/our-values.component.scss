@@ -1,0 +1,46 @@
+@import '/src//stylesVariables/colors.scss';
+
+:host{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-top: 50px;
+}
+.title{
+    text-align: center;
+    .main{
+        font-size: 30px;
+        color: $brickColor;
+    }
+    .sub{
+        color: $darkFont;
+        margin-top: 20px;
+    }
+}
+
+article{
+    padding: 15px;
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), radial-gradient(57.92% 106.79% at 61.35% 44.44%, #00FE84 0%, #00BB87 100%);
+    .subtitle{
+        font-size: 20px;
+    }
+    &.big{
+        margin: -10px 0px;
+    }
+    img{
+        width: 80px;
+    }
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    padding: 30px;
+}

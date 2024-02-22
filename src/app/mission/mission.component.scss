@@ -42,7 +42,7 @@ article {
         position: absolute;
 
         &.primo{
-            top: 100px;
+            top: 60px;
             left: 50px;
 
         }
@@ -63,7 +63,16 @@ article {
     }
     
     .doublePlate{
+        height: 250px;
+
         position: relative;
         display: nones;
+
+        img{
+            top: 100px;
+            left: 50px;
+            max-width: 100%;
+            position: absolute;
+        }
     }
 }

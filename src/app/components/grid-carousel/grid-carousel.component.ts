@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Console } from 'console';
 import * as d3 from 'd3';
 
 var height = 400
@@ -45,12 +46,20 @@ export class GridCarouselComponent {
 
       const simulation = d3 
         .forceSimulation(this.node) 
-        .force("x", d3.forceX().strength(0.01))
-        .force("y", d3.forceY().strength(0.01))
-        .force("collide", d3.forceCollide().radius((d: any)=> d.r*1.5).strength(2).iterations(3))
+        .force("x", d3.forceX().strength(0.02))
+        .force("y", d3.forceY().strength(0.02))
+        .force("collide", d3.forceCollide().radius((d: any)=> d.r).strength(2).iterations(3))
         .on('tick',tick)
 
-        
+        function logx(x: any,width: any){
+          console.log(x,width)
+          if (x > 0){
+          return x + 45 > width/2 ? width/2 - 45 : x 
+          } else {
+            return x - 45 < -width/2 ? -width/2 + 45 : x 
+          }
+        }
+      
       function tick() {
           nodes
               .attr("cx", (d: { x: any; }) => d.x)
@@ -60,7 +69,7 @@ export class GridCarouselComponent {
         // TODO: find the correct type (should be SVGUseElement, but it doesn't work) 
         .drag<any, any>() 
         .on('start', () => simulation.alpha(1).restart()) 
-        .on('drag', ({ x, y }, node) => Object.assign(node, { x, y })) 
+        .on('drag', ({ x, y }, node) => Object.assign(node, { x: logx(x,width), y })) 
         .on('end', ({ x, y }, node) => { 
           Object.assign(node, { 
             x, y, px: x, py: y, 

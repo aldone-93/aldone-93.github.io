@@ -16,6 +16,7 @@ import 'd3';
 import { AboutSectionComponent } from './about-section/about-section.component';
 import { MissionComponent } from './mission/mission.component';
 import { RoadmapComponent } from './roadmap/roadmap.component';
+import { OurValuesComponent } from './our-values/our-values.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -31,7 +32,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CircleContainerComponent,
     AboutSectionComponent,
     MissionComponent,
-    RoadmapComponent
+    RoadmapComponent,
+    OurValuesComponent
   ],
   imports: [
     BrowserModule,
